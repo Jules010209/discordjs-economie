@@ -1,0 +1,32 @@
+{
+  "name": "discord-economie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jules010209/discord-economie.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "js",
+    "discord.js",
+    "discordjs",
+    "economie"
+  ],
+  "author": "Jules010209, Yokachi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jules010209/discord-economie/issues"
+  },
+  "homepage": "https://github.com/Jules010209/discord-economie#readme",
+  "dependencies": {
+    "discord.js": "^13.8.1",
+    "mongoose": "6.2.3",
+    "mysql2": "^2.3.3"
+  }
+}
