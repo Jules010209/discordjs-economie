@@ -12,7 +12,7 @@ function mysqlConnect(host, user, port, password, database) {
     mysql.connect(function(err) {
         if(err) throw err;
     
-        console.log('Connéctée a la database mysql');
+        console.log('The client has been connect as mysql database');
 
         var sql = "CREATE TABLE if not exists economie (guildID VARCHAR(255), userID VARCHAR(255), userName VARCHAR(255), moneyAmount VARCHAR(255))";
 

@@ -10,8 +10,8 @@ async function addMoney(add_amount, add_user, guild) {
     const index = require('../../index');
     const client = index.client;
 
-    if(!client.ws) throw new Error("Merci de connécter le client avec : economie.setClient(client)")
-    if(!guild) throw new Error('merci de définire une guild valide')
+    if(!client.ws) throw new Error('Merci de connécter le client avec : economie.setClient(client)');
+    if(!guild) throw new Error('Merci de définire une guild valide');
 
     if(!add_amount) throw new Error('Merci de définir un montant');
     if(parseInt(add_amount) !== add_amount) throw new Error('Amount n\'est pas un int');
