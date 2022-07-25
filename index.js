@@ -1,7 +1,7 @@
 const db = require('./src/client/db');
 
 function Client(client) {
-    if(!client.ws) throw new Error("client invalide");
+    if(!client.ws) throw new Error("Client invalide");
 
     client.on('messageCreate', async message => {
         // Not add the bot in your database

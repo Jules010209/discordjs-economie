@@ -18,7 +18,7 @@
 ## To Import module
 
 ```js
-const economie = require('discord-economie');
+const economie = require('discordjs-economie');
 ```
 
 <br>
@@ -26,7 +26,7 @@ const economie = require('discord-economie');
 
 ## To use the module with MongoDB
 ```js
-const economie = require('discord-economie');
+const economie = require('discordjs-economie');
 
 economie.db.mongooseConnect('mongoose uri');
 
@@ -36,7 +36,7 @@ economie.setClient(client);
 > To Remove/Add money
 
 ```js
-const economie = require('discord-economie');
+const economie = require('discordjs-economie');
 
 economie.db.mongooseConnect('mongoose uri');
 
@@ -49,7 +49,7 @@ economie.db.mongoose.removeMoney(ammount, user, guild);
 > To get money off any user
 
 ```js
-const economie = require('discord-economie');
+const economie = require('discordjs-economie');
 
 economie.setClient(client);
 
@@ -64,7 +64,7 @@ economie.db.mongoose.getMoney(user, guild);
 ## To use the module with Mysql
 
 ```js
-const economie = require('discord-economie');
+const economie = require('discordjs-economie');
 
 economie.db.mysqlConnect('host', 'user', 'port', 'password', 'database');
 
@@ -74,7 +74,7 @@ economie.setClient(client);
 > To Remove/Add money
 
 ```js
-const economie = require('discord-economie');
+const economie = require('discordjs-economie');
 
 economie.db.mysqlConnect('host', 'user', 'port', 'password', 'database');
 
@@ -87,7 +87,7 @@ economie.db.mysql.removeMoney(ammount, user, guild);
 > To get money off any user
 
 ```js
-const economie = require('discord-economie');
+const economie = require('discordjs-economie');
 
 economie.setClient(client);
 
