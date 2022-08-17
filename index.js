@@ -14,7 +14,7 @@ function Client(client) {
         db: db
     }
 
-    console.log('Client connecter');
+    console.log('Client has been connected !');
 }
 
 module.exports = {

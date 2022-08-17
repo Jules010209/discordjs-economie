@@ -1,7 +1,7 @@
 const sql = require('mysql2');
 
 function mysqlConnect(host, user, port, password, database) {
-    const mysql = new sql.createConnection({
+    const mysql = new sql.createPool({
         host: host,
         user: user,
         port: port,
@@ -9,7 +9,7 @@ function mysqlConnect(host, user, port, password, database) {
         database: database
     });
 
-    mysql.connect(function(err) {
+    mysql.getConnection(function(err) {
         if(err) throw err;
     
         console.log('The client has been connect as mysql database');

@@ -10,17 +10,17 @@ async function addMoney(add_amount, add_user, guild) {
     const index = require('../../index');
     const client = index.client;
 
-    if(!client.ws) throw new Error("Merci de connécter le client avec : economie.setClient(client)")
-    if(!guild.members) throw new Error('merci de définire une guild valide')
+    if(!client.ws) throw new Error("Please connect client with : economie.setClient(client)")
+    if(!guild.members) throw new Error('Please define an valid guild')
     const guildSettings = await adfunc.getguild(guild)
     if(!guildSettings || !guildSettings.users) {
         await adfunc.createguild(guild);
     }
 
-    if(!add_amount) throw new Error('Merci de définir un montant');
-    if(parseInt(add_amount) !== add_amount) throw new Error('Amount n\'est pas un int');
-    if(add_amount == 0) throw new Error('Amount dois être > 0');
-    if(!add_user) throw new Error('Merci de définir un membre');
+    if(!add_amount) throw new Error('Please define an amount');
+    if(parseInt(add_amount) !== add_amount) throw new Error('Amount is not a int');
+    if(add_amount == 0) throw new Error('Amount must be > 0');
+    if(!add_user) throw new Error('Please define an member');
 
     const filtredUser = guildSettings.users.filter(u => u.userId == add_user.id);
 
@@ -37,7 +37,7 @@ async function addMoney(add_amount, add_user, guild) {
         adfunc.updateguild(guild, { users: UserArray });
 
     } else if(filtredUser.length > 1) {
-        throw new Error('pas normal + de une array pour user');
+        throw new Error('An error have been ocured');
     }
 
     for(userss of filtredUser) {
@@ -71,17 +71,17 @@ async function removeMoney(remove_amount, remove_user, guild) {
     const index = require('../../index');
     const client = index.client;
 
-    if(!client.ws) throw new Error("Merci de connécter le client avec : economie.setClient(client)")
-    if(!guild.members) throw new Error('merci de définire une guild valide')
+    if(!client.ws) throw new Error("Please connect client with : economie.setClient(client)")
+    if(!guild.members) throw new Error('Please define an valid guild')
     const guildSettings = await adfunc.getguild(guild)
     if(!guildSettings || !guildSettings.users) {
         await adfunc.createguild(guild);
     }
 
-    if(!remove_amount) throw new Error('merci de définir un montant');
-    if(parseInt(remove_amount) !== remove_amount) throw new Error('amount nest pas un int');
-    if(remove_amount == 0) throw new Error('amount dois être > 0');
-    if(!remove_user) throw new Error('merci de définir un membre');
+    if(!remove_amount) throw new Error('Please define an amount');
+    if(parseInt(remove_amount) !== remove_amount) throw new Error('Amount is not a int');
+    if(remove_amount == 0) throw new Error('Amount must be > 0');
+    if(!remove_user) throw new Error('Please define an member');
 
     const filtredUser = guildSettings.users.filter(u => u.userId == remove_user.id);
 
@@ -98,7 +98,7 @@ async function removeMoney(remove_amount, remove_user, guild) {
         UserArray.push(userTemplate);
         adfunc.updateguild(guild, { users: UserArray });
     } else if(filtredUser.length > 1) {
-        throw new Error('pas normal + de une array pour user');
+        throw new Error('An error have been ocured');
     }
 
     for(userss of filtredUser) {
@@ -134,8 +134,8 @@ async function getMoney(userId, guild) {
     const index = require('../../index');
     const client = index.client;
 
-    if(!client.ws) throw new Error("Merci de connécter le client avec : economie.setClient(client)");
-    if(!guild.members) throw new Error('Merci de définire une guild valide');
+    if(!client.ws) throw new Error("Please connect client with : economie.setClient(client)");
+    if(!guild.members) throw new Error('Please define an valid guild');
     const guildSettings = await adfunc.getguild(guild);
     if(!guildSettings || !guildSettings.users) {
         await adfunc.createguild(guild);
@@ -146,7 +146,7 @@ async function getMoney(userId, guild) {
     if(filtredUser.length == 0) {
         return 0;
     } else if(filtredUser.length > 1) {
-        throw new Error('Pas normal + de une array pour user');
+        throw new Error('An error have been ocured');
     }
 
     for(userss of filtredUser) {
