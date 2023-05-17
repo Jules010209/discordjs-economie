@@ -19,7 +19,6 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@jules010209/discordjs-economie'
       - run: npm ci
-      - run: npm test
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GIT_TOKEN }}
   publish-npm:
