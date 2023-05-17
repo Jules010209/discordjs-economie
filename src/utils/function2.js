@@ -14,7 +14,7 @@ async function addMoney(add_amount, add_user, guild) {
     if(!guild) throw new Error('Please define an valid guild');
 
     if(!add_amount) throw new Error('Please define an amount');
-    if(parseInt(add_amount) !== add_amount) throw new Error('Amount n\'est pas un int');
+    if(parseInt(add_amount) !== add_amount) throw new Error('Amount is not an integer');
     if(add_amount == 0) throw new Error('Amount must be > 0');
     if(!add_user) throw new Error('Please define an member');
     
@@ -57,7 +57,7 @@ async function removeMoney(remove_amount, remove_user, guild) {
     if(!guild) throw new Error('Please define an valid guild');
 
     if(!remove_amount) throw new Error('Please define an amount');
-    if(parseInt(remove_amount) !== remove_amount) throw new Error('Amount is not a int');
+    if(parseInt(remove_amount) !== remove_amount) throw new Error('Amount is not a integer');
     if(remove_amount == 0) throw new Error('Amount must be > 0');
     if(!remove_user) throw new Error('Please define an member');
 
