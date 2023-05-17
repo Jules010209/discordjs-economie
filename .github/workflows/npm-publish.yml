@@ -3,17 +3,14 @@ name: Npm publish
 on:
   push:
     branches: [main]
-    paths:
-      - 'src/**'
-      - '.github/workflows/npm.yaml'
-      - 'package.json'
-      - 'package-lock.json'
-      - '.releaserc.json'
   workflow_dispatch:
 jobs:
   build:
     name: Build to npm website
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -25,7 +22,6 @@ jobs:
       - run: npm test
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GIT_TOKEN }}
-
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
